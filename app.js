@@ -13,12 +13,14 @@ const port = 2000;
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
-const db = mysql.createConnection ({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'socka'
-});
+// const db = mysql.createConnection ({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'socka'
+// });
+
+var db = mysql.createConnection({host: "mysqlserver123234.mysql.database.azure.com", user: "jord5878@mysqlserver123234", password: "P@ssword", database: "socka", port: 3306, ssl:{ca:fs.readFileSync({ca-cert filename})}});
 
 // connect to database
 db.connect((err) => {
