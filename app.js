@@ -13,7 +13,7 @@ const port = process.env.PORT || 2000
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
-const db = mysql.createConnection ({
+const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
@@ -41,7 +41,7 @@ app.use(fileUpload()); // configure fileupload
 // routes for the app
 app.use('/', homeRoutes);
 app.use('/player', playerRoutes);
-app.get('*', function(req, res, next){
+app.get('/', function (req, res, next) {
     res.status(404);
 
     res.render('404.ejs', {
